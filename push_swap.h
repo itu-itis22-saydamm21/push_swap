@@ -51,4 +51,5 @@ char	*ft_substr(char const *s, int start, int len);
 char	*ft_strdup(const char *s1);
 int		ft_atoii(char *s, t_data *a, t_data *b);
 char	*ft_strjoinn(char const *s1, char const *s2);
+void	mini_control(char c, t_data *a, t_data *b);
 #endif

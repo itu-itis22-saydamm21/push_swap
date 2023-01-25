@@ -60,6 +60,7 @@ int	ft_atoii(char *s, t_data *a, t_data *b)
 			neg *= -1;
 		i++;
 	}
+	mini_control(s[i], a, b);
 	while (s[i])
 	{
 		if (!(s[i] >= '0' && s[i] <= '9'))

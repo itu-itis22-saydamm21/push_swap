@@ -12,9 +12,14 @@
 
 #include "push_swap.h"
 
+void	mini_control(char c, t_data *a, t_data *b)
+{
+	if (c == '\0')
+		error_mes(a, b);
+}
+
 char	**__arg_array(char **argv)
 {
-	char	*tmp;
 	char	*string;
 	char	**new_string;
 	int		index;
@@ -23,12 +28,8 @@ char	**__arg_array(char **argv)
 	string = ft_strdup("");
 	while (argv[++index])
 	{
-		tmp = string;
 		string = ft_strjoinn(string, argv[index]);
-		free(tmp);
-		tmp = string;
 		string = ft_strjoinn(string, " ");
-		free(tmp);
 	}
 	new_string = ft_split(string, ' ');
 	free(string);

@@ -17,7 +17,7 @@ void	swap(t_data *data, int control)
 	int	tmp;
 
 	if (data->size < 2)
-		ft_printf("not enough component to swap");
+		ft_printf("not enough component to swap\n");
 	tmp = data->array[data->size - 1];
 	data->array[data->size - 1] = data->array[data->size - 2];
 	data->array[data->size - 2] = tmp;
