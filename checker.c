@@ -1,4 +1,16 @@
-include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msaydam <msaydam@42istanbul.com.tr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/25 12:54:47 by msaydam           #+#    #+#             */
+/*   Updated: 2023/01/25 12:54:47 by msaydam          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
 
 void	check_list_checker(int *control, t_data *a)
 {
@@ -17,19 +29,19 @@ void	check_list_checker(int *control, t_data *a)
 
 void	rotate_func(char *s, t_data *a, t_data *b)
 {
-	if (s[0] == 'r' && s[1] == 'a')
+	if (s[0] == 'r' && s[1] == 'a' && s[2] == '\n')
 		rotate(a, 1);
-	else if (s[0] == 'r' && s[1] == 'b')
+	else if (s[0] == 'r' && s[1] == 'b' && s[2] == '\n')
 		rotate(b, 1);
-	else if (s[0] == 'r' && s[1] == 'r' && s[2] == 'r')
+	else if (s[0] == 'r' && s[1] == 'r' && s[2] == 'r' && s[3] == '\n')
 		rev_rotate_together(a, b, 1);
-	else if (s[0] == 'r' && s[1] == 'r' && s[2] == 'a')
+	else if (s[0] == 'r' && s[1] == 'r' && s[2] == 'a' && s[3] == '\n')
 		rev_rotate(a, 1);
-	else if (s[0] == 'r' && s[1] == 'r' && s[2] == 'b')
+	else if (s[0] == 'r' && s[1] == 'r' && s[2] == 'b' && s[3] == '\n')
 		rev_rotate(b, 1);
-	else if (s[0] == 'r' && s[1] == 'r' && s[2] == 'r')
+	else if (s[0] == 'r' && s[1] == 'r' && s[2] == 'r' && s[3] == '\n')
 		rev_rotate_together(a, b, 1);
-	else if (s[0] == 'r' && s[1] == 'r')
+	else if (s[0] == 'r' && s[1] == 'r' && s[2] == '\n')
 		rotate_together(a, b, 1);
 	else
 		error_mes(a, b);
@@ -37,17 +49,17 @@ void	rotate_func(char *s, t_data *a, t_data *b)
 
 void	make_pros(t_data *a, t_data *b, char *s)
 {
-	if (s[0] == 's' && s[1] == 'a')
+	if (s[0] == 's' && s[1] == 'a' && s[2] == '\n')
 		swap(a, 1);
-	else if (s[0] == 's' && s[1] == 'b')
+	else if (s[0] == 's' && s[1] == 'b' && s[2] == '\n')
 		swap(b, 1);
-	else if (s[0] == 's' && s[1] == 's')
+	else if (s[0] == 's' && s[1] == 's' && s[2] == '\n')
 		swap_together(a, b, 1);
 	else if (s[0] == 'r')
 		rotate_func(&s[0], a, b);
-	else if (s[0] == 'p' && s[1] == 'a')
+	else if (s[0] == 'p' && s[1] == 'a' && s[2] == '\n')
 		push(b, a, 1);
-	else if (s[0] == 'p' && s[1] == 'b')
+	else if (s[0] == 'p' && s[1] == 'b' && s[2] == '\n')
 		push(a, b, 1);
 	else
 		error_mes(a, b);
@@ -56,10 +68,8 @@ void	make_pros(t_data *a, t_data *b, char *s)
 void	read_lines(t_data *a, t_data *b)
 {
 	char	*tmp;
-	char	*buff;
 	char	*test;
 
-	buff = NULL;
 	while (1)
 	{
 		tmp = get_next_line(0);
