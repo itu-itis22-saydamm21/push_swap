@@ -83,6 +83,7 @@ void	read_lines(t_data *a, t_data *b)
 			test++;
 		}
 		make_pros(a, b, tmp);
+		free(tmp);
 	}
 }
 
@@ -103,7 +104,10 @@ int	main(int ac, char **av)
 	read_lines(&a, &b);
 	check_list_checker(&control, &a);
 	if (control == 1 && !b.size)
-		ft_printf("OK\n");
+		write(2, "OK\n", 4);
 	else if (!control || b.size != 0)
-		ft_printf("KO\n");
+		write(2, "KO\n", 4);
+	free(a.array);
+	free(b.array);
+	return (0);
 }

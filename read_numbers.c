@@ -23,13 +23,18 @@ char	**__arg_array(char **argv)
 	char	*string;
 	char	**new_string;
 	int		index;
+	char	*tmp;
 
 	index = 0;
 	string = ft_strdup("");
 	while (argv[++index])
 	{
-		string = ft_strjoinn(string, argv[index]);
-		string = ft_strjoinn(string, " ");
+		tmp = string;
+		string = ft_strjoinn(tmp, argv[index]);
+		free(tmp);
+		tmp = string;
+		string = ft_strjoinn(tmp, " ");
+		free(tmp);
 	}
 	new_string = ft_split(string, ' ');
 	free(string);

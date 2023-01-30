@@ -17,7 +17,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <limits.h>
-# include "./ft_printf/ft_printf.h"
+# include "./printf/ft_printf.h"
 # include "./gnl/get_next_line.h"
 
 typedef struct s_data
@@ -41,7 +41,6 @@ void	error_mes(t_data *a, t_data *b);
 void	free_function(t_data *a, t_data *b);
 void	send_b(t_data *a, t_data *b);
 void	find_sort_path(t_data *a, t_data *b, int *i_a, int *i_b);
-void	check_double(t_data *a, t_data *b);
 void	check_listed(t_data *a, t_data *b);
 void	reading(char **av, t_data *a, t_data *b);
 void	check_listed_for_checker(t_data *a, t_data *b, int *control);
