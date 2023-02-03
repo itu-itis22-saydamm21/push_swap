@@ -79,7 +79,7 @@ void	read_lines(t_data *a, t_data *b)
 		while (*test)
 		{
 			if (*test == ' ')
-				exit(1);
+				error_mes(a,b);
 			test++;
 		}
 		make_pros(a, b, tmp);
