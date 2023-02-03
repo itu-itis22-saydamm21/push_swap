@@ -42,7 +42,7 @@ void	send_b(t_data *a, t_data *b)
 	pivot = make_pivot(a);
 	if (a->size < 3)
 		return ;
-	while (total_numbers > i)
+	while (i < total_numbers)
 	{
 		if (a->array[a->size - 1] <= pivot)
 			push(a, b, 0);
@@ -113,11 +113,11 @@ void	find_sort_path(t_data *a, t_data *b, int *i_a, int *i_b)
 		if (m < b->size / 2)
 			tmp[0] = m;
 		else
-			tmp[0] = b->size - m - 1;
+			tmp[0] = b->size - m;
 		if (n < a->size / 2)
 			tmp[1] = n;
 		else
-			tmp[1] = a->size - n - 1;
+			tmp[1] = a->size - n;
 		if (tmp[0] + tmp[1] < min)
 		{
 			min = tmp[0] + tmp[1];

@@ -47,7 +47,7 @@ void	rotate(t_data *data, int control)
 
 	i = 0;
 	tmp = data->array[data->size - 1];
-	while (i < data->size -1)
+	while (i < data->size - 1)
 	{
 		data->array[data->size - 1 - i] = data->array[data->size - 2 - i];
 		i++;
